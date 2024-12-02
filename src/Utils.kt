@@ -19,3 +19,12 @@ fun String.md5() = BigInteger(1, MessageDigest.getInstance("MD5").digest(toByteA
  * The cleaner shorthand for printing output.
  */
 fun Any?.println() = println(this)
+
+
+/**
+ * Convert String of space delimited numbers to List<Int>
+ */
+fun stringToList(inString: String): List<Int> {
+    val strings = inString.split(" ")
+    return strings.map { it.toInt() }
+}
