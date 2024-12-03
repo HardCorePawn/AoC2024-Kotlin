@@ -83,6 +83,7 @@ fun main() {
     }
 
     // Read the input from the `src/Day02_input.txt` file.
+//    val input = readInput("Day02_sample")
     val input = readInput("Day02_input")
     part1(input).println()
     part2(input).println()
