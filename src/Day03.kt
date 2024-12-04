@@ -3,27 +3,13 @@ fun main() {
     fun part1(input: List<String>): Int {
         var safeCount = 0
 
-        // find the valid mul(xxx,xxx) subStrings
-        val regex = Regex("mul\\([0-9]{1,3},[0-9]{1,3}\\)")
+        // find the valid mul(xxx,xxx) subStrings, use groups to get Ints
+        val regex = Regex("mul\\(([0-9]{1,3}),([0-9]{1,3})\\)")
         input.forEach { line ->
-            val matchResults = regex.findAll(line)
-
-            // extract the Ints
-            val digitRegex = Regex("[0-9]+,[0-9]+")
-
-            if (matchResults.count() > 0) {
-
-                matchResults.forEach { matchResult ->
-                    val numbers = digitRegex.find(matchResult.value)
-
-                    if (numbers != null) {
-                        val first = numbers.value.substringBefore(",").toInt()
-                        val second = numbers.value.substringAfterLast(",").toInt()
-
-                        // multiply the Ints together and add the product to the running sum
-                        safeCount += (first * second)
-                    }
-                }
+            val matchResults = regex.findAll(line).toList()
+            for (match in matchResults) {
+                // multiply the Ints together and add the product to the running sum
+                safeCount += match.groupValues[1].toInt() * match.groupValues[2].toInt()
             }
         }
 
