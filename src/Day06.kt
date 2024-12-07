@@ -62,6 +62,6 @@ fun main() {
         }
     }
     println("Part 1 Unique locations: ${visitedPos.size}")
-    part2(input).println()
+
 }
 
