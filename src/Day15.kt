@@ -7,13 +7,6 @@ enum class SquareType(val char: Char) {
     BOXRIGHT(']')
 }
 
-enum class Dir(val pair: Pair<Int, Int>) {
-    UP(0 to -1),
-    DOWN(0 to 1),
-    LEFT(-1 to 0),
-    RIGHT(1 to 0)
-}
-
 fun main() {
 
     // convert character to SquareType
