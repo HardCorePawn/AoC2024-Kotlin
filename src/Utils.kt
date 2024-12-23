@@ -93,7 +93,7 @@ class Graph<T> {
      * @param node1 The first node.
      * @param node2 The second node
      */
-    fun addEgde(node1: Node<T>, node2: Node<T>) {
+    fun addEdge(node1: Node<T>, node2: Node<T>) {
         node1.neighbours.add(node2)
         node2.neighbours.add(node1)
     }
